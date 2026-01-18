@@ -1,0 +1,10 @@
+class Query:
+    createTable = 'CREATE TABLE IF NOT EXISTS products (' \
+    'id INTEGER PRIMARY KEY,' \
+    ' productName TEXT NOT NULL,' \
+    ' productCalory INTEGER NOT NULL)'
+
+    createProduct = 'INSERT INTO products (productName, productCalory) VALUES (?, ?)'
+    deleteProduct = ''
+
+
