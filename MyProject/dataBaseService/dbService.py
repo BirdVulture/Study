@@ -54,11 +54,9 @@ def dataBaseAction(queryType):
     connection.commit()
     connection.close()
 
-    
 
 
 
-
-dataBaseAction("POST")
+dataBaseAction("GET1")
 
 
