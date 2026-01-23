@@ -19,32 +19,44 @@ def dataBaseAction(queryType):
     dbAction = connection.cursor()
 
     dbQuery = qq.Query.createProduct
-    dbQuery1 = qq.Query.deleteProduct
+    
 
 
 
     match queryType:
         case "GET" :
-            pass
+            dbQuery = qq.Query.findProduct
+            queryData = ("apple",)
+        case "GET1" :
+            dbQuery = qq.Query.readProduct
+            queryData = (6,)
+
         case "POST" :
-            pass
+            dbQuery = qq.Query.createProduct
+            queryData = ("apple", 10)
+            
         case "DELETE" :
-            pass        
+            dbQuery = qq.Query.deleteProduct
+            queryData = (2,)
+               
         case _:
             pass
 
     print(dbQuery)
 
-    #dbAction.execute(dbQuery, ('bread', 4))
+    dbAction.execute(dbQuery, (queryData))
+    queryResult = dbAction.fetchall()
+    print(queryResult)
 
-    #dbAction.execute(dbQuery1, (2,)) 
+
+
 
     connection.commit()
     connection.close()
-    
 
 
 
-dataBaseAction()
+
+dataBaseAction("POST")
 
 

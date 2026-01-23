@@ -6,7 +6,7 @@ class Query:
 
     createProduct = 'INSERT INTO products (productName, productCalory) VALUES (?, ?)'
     findProduct = 'SELECT id FROM products WHERE productName = ?'
-    readProduct = 'SELECT productName FROM products WHERE id = ?'
+    readProduct = 'SELECT productName, productCalory FROM products WHERE id = ?'
     deleteProduct = 'DELETE FROM products WHERE id = ?'
 
 
