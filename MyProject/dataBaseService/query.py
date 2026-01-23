@@ -5,6 +5,9 @@ class Query:
     ' productCalory INTEGER NOT NULL)'
 
     createProduct = 'INSERT INTO products (productName, productCalory) VALUES (?, ?)'
-    deleteProduct = ''
+    findProduct = 'SELECT id FROM products WHERE productName = ?'
+    readProduct = 'SELECT productName FROM products WHERE id = ?'
+    deleteProduct = 'DELETE FROM products WHERE id = ?'
+
 
 
