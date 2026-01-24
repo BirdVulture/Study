@@ -38,7 +38,7 @@ def dataBaseAction(queryType, queryPayload):
 
 
 
-
+# TEST
 #dataBaseAction(qt.QueryType.CREATEPRODUCT, ("apple", 64))
 
 #dataBaseAction(qt.QueryType.DELETEPRODUCT, (1,))
