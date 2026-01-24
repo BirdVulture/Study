@@ -1,6 +1,7 @@
 import sqlite3
-#import  modelProduct as mp
-import query as qq
+import queryType as qt
+import queryManger as qm
+ 
 
 
 '''
@@ -13,38 +14,19 @@ class DBmanager:
 
 
 
-def dataBaseAction(queryType):
+def dataBaseAction(queryType, queryPayload):
     connection = sqlite3.connect("productsDB")
 
     dbAction = connection.cursor()
 
-    dbQuery = qq.Query.createProduct
+    dbQuery, dbPayload = qm.QueryMaker().makeQuery(queryType, queryPayload)
     
-
-
-
-    match queryType:
-        case "GET" :
-            dbQuery = qq.Query.findProduct
-            queryData = ("apple",)
-        case "GET1" :
-            dbQuery = qq.Query.readProduct
-            queryData = (6,)
-
-        case "POST" :
-            dbQuery = qq.Query.createProduct
-            queryData = ("apple", 10)
-            
-        case "DELETE" :
-            dbQuery = qq.Query.deleteProduct
-            queryData = (2,)
-               
-        case _:
-            pass
+  
 
     print(dbQuery)
+    print(dbPayload)
 
-    dbAction.execute(dbQuery, (queryData))
+    dbAction.execute(dbQuery, dbPayload) # type: ignore
     queryResult = dbAction.fetchall()
     print(queryResult)
 
@@ -57,6 +39,10 @@ def dataBaseAction(queryType):
 
 
 
-dataBaseAction("GET1")
+#dataBaseAction(qt.QueryType.CREATEPRODUCT, ("apple", 64))
+
+#dataBaseAction(qt.QueryType.DELETEPRODUCT, (1,))
+
+
 
 
