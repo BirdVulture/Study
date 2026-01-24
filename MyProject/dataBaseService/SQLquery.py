@@ -4,10 +4,12 @@ class Query:
     ' productName TEXT NOT NULL,' \
     ' productCalory INTEGER NOT NULL)'
 
+    
     createProduct = 'INSERT INTO products (productName, productCalory) VALUES (?, ?)'
     findProduct = 'SELECT id FROM products WHERE productName = ?'
     readProduct = 'SELECT productName, productCalory FROM products WHERE id = ?'
     deleteProduct = 'DELETE FROM products WHERE id = ?'
+    readProductList = 'SELECT * FROM products LIMIT ?'
 
 
 

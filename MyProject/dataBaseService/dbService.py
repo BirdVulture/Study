@@ -27,7 +27,11 @@ def dataBaseAction(queryType, queryPayload):
     print(dbPayload)
 
     dbAction.execute(dbQuery, dbPayload) # type: ignore!!!!!
+    
+    #dbAction.execute('SELECT * FROM products LIMIT ?', (5,)) # Для тестирования SQL запросов
+    
     queryResult = dbAction.fetchall()
+    
     print(queryResult)
 
 
@@ -43,6 +47,5 @@ def dataBaseAction(queryType, queryPayload):
 
 #dataBaseAction(qt.QueryType.DELETEPRODUCT, (1,))
 
-
-
+dataBaseAction(qt.QueryType.READPRODUCTLIST, (5,))
 

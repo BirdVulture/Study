@@ -6,6 +6,7 @@ class QueryType(Enum):
     GETPRODUCTINFO = "GET"
     CREATEPRODUCT = "POST"
     DELETEPRODUCT = "DELETE"
+    READPRODUCTLIST = "GET"
 
 
 
