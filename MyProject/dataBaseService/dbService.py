@@ -26,7 +26,7 @@ def dataBaseAction(queryType, queryPayload):
     print(dbQuery)
     print(dbPayload)
 
-    dbAction.execute(dbQuery, dbPayload) # type: ignore
+    dbAction.execute(dbQuery, dbPayload) # type: ignore!!!!!
     queryResult = dbAction.fetchall()
     print(queryResult)
 
