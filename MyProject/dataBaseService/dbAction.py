@@ -51,3 +51,5 @@ print(testObject)
 
 #dataBaseAction(qt.QueryType.READPRODUCTLIST, (5,))
 
+#1596
+
