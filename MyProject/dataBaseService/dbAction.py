@@ -4,7 +4,11 @@ import queryManger as qm
  
 class DBAction:
 
-    queryResult = None    
+    def __init__(self):
+        self.queryResult = None
+
+    def __del__(self):
+        pass
     
     def doQuery(self, queryType, queryPayload):
         connection = sqlite3.connect("productsDB")
@@ -42,6 +46,10 @@ testObject = DBAction()
 
 testObject.doQuery(qt.QueryType.READPRODUCTLIST, (10,))
 print(testObject.queryResult)
+
+print(testObject)
+testObject.__del__()
+print(testObject)
 
 
 #dataBaseAction(qt.QueryType.CREATEPRODUCT, ("apple", 64))
