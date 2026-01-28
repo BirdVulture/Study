@@ -15,10 +15,6 @@ class DBAction:
 
         dbQuery, dbPayload = qm.QueryMaker().makeQuery(queryType, queryPayload)
         
-    
-
-        print(dbQuery)
-        print(dbPayload)
 
         #нужно добавить try
         #нужно добавить обработку результата в зависимости от запроса
