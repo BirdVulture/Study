@@ -42,7 +42,7 @@ class DBQuery:
 testObject = DBQuery()
 
 testObject.doQuery(qt.QueryType.READPRODUCTLIST, (10,))
-print(testObject.queryResult)
+print(testObject.queryResult["queryAnswer"])
 
 
 print(testObject)
