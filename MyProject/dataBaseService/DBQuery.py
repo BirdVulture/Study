@@ -2,10 +2,13 @@ import sqlite3
 import queryType as qt
 import queryManger as qm
  
-class DBAction:
+class DBQuery:
 
     def __init__(self):
-        self.queryResult = None
+        self.queryResult = {
+            "queryStatus": None,
+            "queryAnswer": None
+            }
 
         
     def doQuery(self, queryType, queryPayload):
@@ -23,7 +26,7 @@ class DBAction:
         
         #dbAction.execute('SELECT * FROM products LIMIT ?', (5,)) # Для тестирования SQL запросов
         
-        self.queryResult = dbAction.fetchall()
+        self.queryResult["queryAnswer"] = dbAction.fetchall()
         
         print(self.queryResult)
 
@@ -36,7 +39,7 @@ class DBAction:
 
 
 # TEST
-testObject = DBAction()
+testObject = DBQuery()
 
 testObject.doQuery(qt.QueryType.READPRODUCTLIST, (10,))
 print(testObject.queryResult)
