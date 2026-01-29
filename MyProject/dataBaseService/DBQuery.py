@@ -26,9 +26,9 @@ class DBQuery:
         
         #dbAction.execute('SELECT * FROM products LIMIT ?', (5,)) # Для тестирования SQL запросов
         
-        self.queryResult["queryAnswer"] = dbAction.fetchall()
+        self.queryResult["queryAnswer"] = dbAction.fetchall() # type: ignore
         
-        print(self.queryResult)
+        print(f"\nПроверка 1 {self.queryResult}")
 
 
 
@@ -42,7 +42,7 @@ class DBQuery:
 testObject = DBQuery()
 
 testObject.doQuery(qt.QueryType.READPRODUCTLIST, (10,))
-print(testObject.queryResult["queryAnswer"])
+print(f"\nПроверка 2{testObject.queryResult["queryAnswer"]}")
 
 
 print(testObject)
