@@ -10,6 +10,13 @@ class QueryType(Enum):
 
 
 
+#test1 = QueryType.FINDPRODUCT
+
+#print(test1)
+
+
+
+
 
 
 
