@@ -1,7 +1,7 @@
 import sqlite3
-import queryType as qt
-import queryManger as qm
-import queryStatus as qs
+import MyProject.dataBaseService.query_type as qt
+import MyProject.dataBaseService.query_creator as qm
+import MyProject.dataBaseService.query_status as qs
  
 
 #нужно добавить try ГОТОВО
