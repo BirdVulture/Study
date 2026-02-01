@@ -4,38 +4,44 @@ import queryType as qt
 class QueryMaker:
 
 
-    def  makeQuery (self, queryType, queryPayload):
+    def  makeQuery(self, queryType, queryPayload):
               
 
         match queryType:
             case qt.QueryType.READPRODUCTLIST:
-                sqlQuery = sql.Query.readProductList
+                self.sqlQuery = sql.QueryProduct.READPRODUCTLIST
 
             case qt.QueryType.FINDPRODUCT :
-                sqlQuery = sql.Query.findProduct
+                self.sqlQuery = sql.QueryProduct.FINDPRODUCT 
                 
-            case qt.QueryType.GETPRODUCTINFO :
-                sqlQuery = sql.Query.readProduct
-                
-            case qt.QueryType.CREATEPRODUCT :
-                sqlQuery = sql.Query.createProduct
+            #case qt.QueryType.GETPRODUCTINFO :
+            #    self.sqlQuery =  
                 
                 
-            case qt.QueryType.DELETEPRODUCT :
-                sqlQuery = sql.Query.deleteProduct
+            #case qt.QueryType.CREATEPRODUCT :
+            #    self.sqlQuery =  
+                
+                
+            #case qt.QueryType.DELETEPRODUCT :
+            #    self.sqlQuery = 
 
             case _:
                 print("Error")
                 return (None, None)
             
-        return sqlQuery, queryPayload
+        return self.sqlQuery, queryPayload
     
 
 
 
 #TEST
-#testQuery = QueryMaker().makeQuery(qt.QueryType.CREATEPRODUCT, ("apple", 10))
+
 testQuery = QueryMaker().makeQuery(qt.QueryType.READPRODUCTLIST, (10,))
+testQuery1 = QueryMaker().makeQuery(qt.QueryType.FINDPRODUCT, (10,))
+#testQuery2 = QueryMaker().makeQuery(qt.QueryType.GETPRODUCTINFO, (10,))
+#testQuery3 = QueryMaker().makeQuery(qt.QueryType.CREATEPRODUCT, ("apple", 10))
+#testQuery4 = QueryMaker().makeQuery(qt.QueryType.DELETEPRODUCT, (10,))
 
 print(testQuery)
+print(testQuery1)
      
