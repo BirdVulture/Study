@@ -2,7 +2,7 @@ import SQLquery as sql
 import queryType as qt
 
 class QueryMaker:
-
+    sqlQuery = None
 
     def  makeQuery(self, queryType, queryPayload):
               
